@@ -1,4 +1,4 @@
-package factorPattern.otp;
+package decorator.before;
 
 import java.util.Random;
 

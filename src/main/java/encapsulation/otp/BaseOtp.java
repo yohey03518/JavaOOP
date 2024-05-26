@@ -23,7 +23,7 @@ public abstract class BaseOtp {
   }
 
   public boolean VerifyOtp(String otp) {
-    if (tryTimes >= GetMaxSendTimes()) {
+    if (tryTimes >= GetMaxTryTimes()) {
       System.out.println("OTP verification failed. Maximum try times reached.");
       return false;
     }
