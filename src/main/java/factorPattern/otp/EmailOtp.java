@@ -2,8 +2,11 @@ package factorPattern.otp;
 
 public class EmailOtp extends BaseOtp {
 
-    public EmailOtp(User user){
+    private final EmailSmtpProvider provider;
+
+    public EmailOtp(User user, EmailSmtpProvider provider){
         super(user);
+        this.provider = provider;
     }
 
     protected int GetMaxSendTimes() {
@@ -16,5 +19,6 @@ public class EmailOtp extends BaseOtp {
 
     protected void SendToUser(User user, String otpAnswer) {
         System.out.println("OTP sent to email: " + user.GetEmail());
+        provider.SendEmail(user.GetEmail(), "Your OTP is " + otpAnswer + ". Please do not reply this email.");
     }
 }

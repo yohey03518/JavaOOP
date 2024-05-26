@@ -1,8 +1,11 @@
 package factorPattern.otp;
 
 public class SmsOtp extends BaseOtp {
-    public SmsOtp(User user) {
+    private final TwilioSmsProvider provider;
+
+    public SmsOtp(User user, TwilioSmsProvider provider) {
         super(user);
+        this.provider = provider;
     }
 
     protected int GetMaxSendTimes() {
@@ -15,5 +18,6 @@ public class SmsOtp extends BaseOtp {
 
     protected void SendToUser(User user, String otpAnswer) {
         System.out.println("OTP sent to phone: " + user.GetMobile());
+        provider.SendSms(user.GetMobile(), "Your OTP is " + otpAnswer + ". Thanks for using our service.");
     }
 }

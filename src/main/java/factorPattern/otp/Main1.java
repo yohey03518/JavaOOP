@@ -2,10 +2,19 @@ package factorPattern.otp;
 
 public class Main1 {
     public static void main(String[] args) {
-        String otpType = "sms";
+        String otpType = args[0];//"email";
         User user = new User("+886912345678", "myemail@gmail.com", "zh-TW");
 
-        BaseOtp userOtp = new OtpFactory().Create(user, otpType);
+        BaseOtp userOtp = switch (otpType) {
+            case "email" -> new EmailOtp(user
+                    , new EmailSmtpProvider("10.12.50.11", "25", "otpUser", "1234qwer"));
+            case "sms" -> new SmsOtp(user
+                    , new TwilioSmsProvider("https://api.twilio.com", "67290H!@*8798==", "dh124as"));
+            // app
+            default -> throw new IllegalArgumentException("Invalid otp type");
+        };
+
+
         userOtp.Send();
         userOtp.Send();
         userOtp.Send();
