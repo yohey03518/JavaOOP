@@ -1,11 +1,15 @@
 package factorPattern.otp;
 
 public class SmsOtp extends BaseOtp {
-    private final TwilioSmsProvider provider;
+    private final String url;
+    private final String authToken;
+    private final String accountSid;
 
-    public SmsOtp(User user, TwilioSmsProvider provider) {
-        super(user);
-        this.provider = provider;
+    public SmsOtp(String url, String authToken, String accountSid) {
+
+        this.url = url;
+        this.authToken = authToken;
+        this.accountSid = accountSid;
     }
 
     protected int GetMaxSendTimes() {
@@ -17,7 +21,10 @@ public class SmsOtp extends BaseOtp {
     }
 
     protected void SendToUser(User user, String otpAnswer) {
-        System.out.println("OTP sent to phone: " + user.GetMobile());
-        provider.SendSms(user.GetMobile(), "Your OTP is " + otpAnswer + ". Thanks for using our service.");
+        String mobile = user.GetMobile();
+        String content = "Your OTP is " + otpAnswer + ". Thanks for using our service.";
+
+        System.out.println("Call API to " + url + " with accountSid:" + accountSid + " authToken:" + authToken);
+        System.out.println("Send SMS to " + mobile + " with content: " + content);
     }
 }

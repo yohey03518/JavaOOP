@@ -7,9 +7,9 @@ public class Main2 {
 
         BaseOtp userOtp = new OtpFactory().Create(user, otpType);
 
-        userOtp.Send();
-        userOtp.Send();
-        userOtp.Send();
+        userOtp.Send(user);
+        userOtp.Send(user);
+        userOtp.Send(user);
 
         userOtp.VerifyOtp("123456");
         userOtp.VerifyOtp("123456");

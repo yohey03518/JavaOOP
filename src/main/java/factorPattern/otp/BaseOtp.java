@@ -3,13 +3,6 @@ package factorPattern.otp;
 import java.util.Random;
 
 public abstract class BaseOtp {
-  private final User user;
-
-  public BaseOtp(User user) {
-
-    this.user = user;
-  }
-
   protected abstract int GetMaxSendTimes();
   protected abstract int GetMaxTryTimes();
   protected abstract void SendToUser(User user, String otpAnswer);
@@ -18,7 +11,7 @@ public abstract class BaseOtp {
   private int tryTimes = 0;
   private String lastAnswer = "";
 
-  public void Send() {
+  public void Send(User user) {
     if (sendTimes < GetMaxSendTimes()) {
       sendTimes++;
       int otp = new Random().nextInt(900000) + 100000;
