@@ -5,11 +5,11 @@ import java.util.List;
 
 public class Calculator {
     private List<Double> list;
-    private List<Integer> action;
+    private List<ActionType> action;
 
     public Calculator() {
         list = new ArrayList<Double>();
-        action = new ArrayList<Integer>();
+        action = new ArrayList<ActionType>();
     }
 
     public void Add(int num) {
@@ -24,7 +24,7 @@ public class Calculator {
 
     public void Add(double num) {
         list.add(num);
-        action.add(1);
+        action.add(ActionType.ADD);
     }
 
     public void Multiply(int num) {
@@ -39,7 +39,7 @@ public class Calculator {
 
     public void Multiply(double num) {
         list.add(num);
-        action.add(2);
+        action.add(ActionType.MULTIPLY);
     }
 
     public void Clean() {
@@ -51,9 +51,9 @@ public class Calculator {
         double result = 0;
         if (list.size() > 0) {
             for (int i = 0; i <= list.size() - 1; i++) {
-                if (action.get(i) == 1) {
+                if (action.get(i) == ActionType.ADD) {
                     result += list.get(i);
-                } else if (action.get(i) == 2) {
+                } else if (action.get(i) == ActionType.MULTIPLY) {
                     result *= list.get(i);
                 }
             }
