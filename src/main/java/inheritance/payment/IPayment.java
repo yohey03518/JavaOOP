@@ -1,6 +1,6 @@
 package inheritance.payment;
 
-public interface Payment {
+public interface IPayment {
     public String GetPaymentUrl(Company myCompany);
     public boolean IsAvailable();
 }

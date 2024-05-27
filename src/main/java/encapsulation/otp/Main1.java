@@ -23,7 +23,7 @@ public class Main1 {
     if (tryTimes >= MAX_TRY_TIMES) {
       System.out.println("OTP verification failed. Maximum try times reached.");
     }
-    if (otp.equals(lastAnswer)) {
+    else if (otp.equals(lastAnswer)) {
       System.out.println("OTP verified successfully.");
     } else {
       tryTimes++;

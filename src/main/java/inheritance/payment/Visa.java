@@ -6,7 +6,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 
-public class Visa implements Payment {
+public class Visa implements IPayment {
   public String GetPaymentUrl(Company myCompany) {
     return "https://visa.com/" + myCompany.GetCompanyId();
   }

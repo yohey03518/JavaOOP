@@ -2,7 +2,8 @@ package factorPattern.otp;
 
 public class Main1 {
     public static void main(String[] args) {
-        String otpType = args[0];//"email";
+        String otpType = "email";
+//        String otpType = args[0];//"email";
         User user = new User("+886912345678", "myemail@gmail.com", "zh-TW");
 
         BaseOtp userOtp = switch (otpType) {
