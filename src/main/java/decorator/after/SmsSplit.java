@@ -8,6 +8,7 @@ public class SmsSplit implements ISmsProvider {
     }
 
     public boolean SendSms(String toMobile, String body) {
+        System.out.println("SmsSplit Start");
         // 2. If the message is too long, need to split it
         String[] messages;
         if (body.length() > 80) {
@@ -17,9 +18,11 @@ public class SmsSplit implements ISmsProvider {
         }
         for (String message : messages) {
             if (!smsProvider.SendSms(toMobile, message)) {
+                System.out.println("SmsSplit End");
                 return false;
             }
         }
+        System.out.println("SmsSplit End");
         return true;
     }
 }

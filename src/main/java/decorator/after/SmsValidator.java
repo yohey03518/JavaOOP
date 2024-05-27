@@ -8,11 +8,16 @@ public class SmsValidator implements ISmsProvider {
     }
 
     public boolean SendSms(String toMobile, String body) {
+        System.out.println("SmsValidator Start");
         // 1. If mobile number does not start with "+", system needs to add "+"
         if (!toMobile.startsWith("+")) {
-            return smsProvider.SendSms("+" + toMobile, body);
+            boolean isSuccess = smsProvider.SendSms("+" + toMobile, body);
+            System.out.println("SmsValidator End");
+            return isSuccess;
         }
 
-        return smsProvider.SendSms(toMobile, body);
+        boolean isSuccess = smsProvider.SendSms(toMobile, body);
+        System.out.println("SmsValidator End");
+        return isSuccess;
     }
 }

@@ -11,8 +11,8 @@ public class OtpFactory {
             case "sms" -> new SmsOtp(user,
                     new SmsValidator(
                             new SmsSplit(
-                                    new SmsRetry(
-                                            new SmsLog(
+                                    new SmsLog(
+                                            new SmsRetry(
                                                     new TwilioSmsProvider("https://api.twilio.com", "67290H!@*8798==", "dh124as")
                                             )
                                     )

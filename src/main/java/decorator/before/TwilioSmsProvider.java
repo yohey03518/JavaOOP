@@ -31,17 +31,36 @@ public class TwilioSmsProvider {
         for (String message : messages) {
             // 3. System needs to record total success and fail count
             // 4. If sending fail, system needs to retry 3 times
+            boolean isSuccess = false;
             for (int i = 0; i < 3; i++) {
                 // Use random to simulate send sms sometimes success and sometimes fail
                 if (new Random().nextInt(10) > 3) {
+                    isSuccess = true;
                     System.out.println("OTP is sent to " + toMobile + " with body: " + message);
-                    systemSuccessCount++;
                     break;
-                } else {
-                    System.out.println("OTP sending failed.");
-                    systemFailCount++;
                 }
             }
+            if (isSuccess) {
+                systemSuccessCount++;
+            } else {
+                systemFailCount++;
+            }
         }
+
+//        for (String message : messages) {
+//            // 3. System needs to record total success and fail count
+//            // 4. If sending fail, system needs to retry 3 times
+//            for (int i = 0; i < 3; i++) {
+//                // Use random to simulate send sms sometimes success and sometimes fail
+//                if (new Random().nextInt(10) > 3) {
+//                    System.out.println("OTP is sent to " + toMobile + " with body: " + message);
+//                    systemSuccessCount++;
+//                    break;
+//                } else {
+//                    System.out.println("OTP sending failed.");
+//                    systemFailCount++;
+//                }
+//            }
+//        }
     }
 }

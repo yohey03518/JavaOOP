@@ -9,7 +9,7 @@ public class SmsOtp extends BaseOtp {
     }
 
     protected int GetMaxSendTimes() {
-        return 3;
+        return 10;
     }
 
     protected int GetMaxTryTimes() {

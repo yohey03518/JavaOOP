@@ -10,6 +10,7 @@ public class SmsLog implements ISmsProvider {
     }
 
     public boolean SendSms(String toMobile, String body) {
+        System.out.println("SmsLog Start");
         // 3. System needs to record total success and fail count
         boolean isSuccess = smsProvider.SendSms(toMobile, body);
         if (isSuccess) {
@@ -17,6 +18,7 @@ public class SmsLog implements ISmsProvider {
         } else {
             systemFailCount++;
         }
+        System.out.println("SmsLog End");
         return isSuccess;
     }
 

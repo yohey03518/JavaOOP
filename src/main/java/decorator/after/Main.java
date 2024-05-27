@@ -8,12 +8,7 @@ public class Main {
         BaseOtp userOtp = new OtpFactory().Create(user, otpType);
 
         userOtp.Send();
-        userOtp.Send();
-        userOtp.Send();
 
-        userOtp.VerifyOtp("123456");
-        userOtp.VerifyOtp("123456");
-        userOtp.VerifyOtp("123456");
-        userOtp.VerifyOtp("123456");
+        System.out.println("Sms success rate: " + SmsLog.GetSuccessRate()*100 + "%");
     }
 }
