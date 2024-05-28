@@ -1,4 +1,4 @@
-package factorPattern.vehicle;
+package factoryPattern.vehicle;
 
 public class Main {
     public static void main(String[] args) {

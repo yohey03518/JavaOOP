@@ -1,4 +1,4 @@
-package factorPattern.otp;
+package factoryPattern.otp;
 
 public class TwilioSmsProvider {
     private final String url;

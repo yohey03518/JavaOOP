@@ -1,4 +1,4 @@
-package factorPattern.otp;
+package factoryPattern.otp;
 
 import java.util.Random;
 

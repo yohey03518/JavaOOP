@@ -1,6 +1,6 @@
-package factorPattern.vehicle;
+package factoryPattern.vehicle;
 
-public class ModelY implements IElectricVehicle {
+public class ModelX implements IElectricVehicle {
     public void Charge() {
 
     }

@@ -1,4 +1,4 @@
-package factorPattern.otp;
+package factoryPattern.otp;
 
 public class Main2 {
     public static void main(String[] args) {

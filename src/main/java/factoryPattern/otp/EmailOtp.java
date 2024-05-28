@@ -1,4 +1,4 @@
-package factorPattern.otp;
+package factoryPattern.otp;
 
 public class EmailOtp extends BaseOtp {
 

@@ -1,4 +1,4 @@
-package factorPattern.otp;
+package factoryPattern.otp;
 
 public class OtpFactory {
     public BaseOtp Create(User user, String otpType) {

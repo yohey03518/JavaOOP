@@ -1,4 +1,4 @@
-package factorPattern.vehicle;
+package factoryPattern.vehicle;
 
 public class TelsaFactory {
     public static IElectricVehicle Create(String type) {

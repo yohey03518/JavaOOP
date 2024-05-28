@@ -1,4 +1,4 @@
-package factorPattern.vehicle;
+package factoryPattern.vehicle;
 
 public interface IElectricVehicle {
     void Charge();
