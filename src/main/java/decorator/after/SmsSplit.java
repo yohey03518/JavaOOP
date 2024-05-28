@@ -2,6 +2,7 @@ package decorator.after;
 
 public class SmsSplit implements ISmsProvider {
     private final ISmsProvider smsProvider;
+    public static final int maxLength = 80;
 
     public SmsSplit(ISmsProvider smsProvider) {
         this.smsProvider = smsProvider;
@@ -11,8 +12,8 @@ public class SmsSplit implements ISmsProvider {
         System.out.println("SmsSplit Start");
         // 2. If the message is too long, need to split it
         String[] messages;
-        if (body.length() > 80) {
-            messages = body.split("(?<=\\G.{80})");
+        if (body.length() > maxLength) {
+            messages = body.split("(?<=\\G.{" + maxLength + "})");
         } else {
             messages = new String[]{body};
         }

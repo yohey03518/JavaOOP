@@ -2,7 +2,7 @@ package decorator.after;
 
 public class SmsRetry implements ISmsProvider {
     private final ISmsProvider smsProvider;
-    private final static int maxRetry = 3;
+    public final static int maxRetry = 3;
 
     public SmsRetry(ISmsProvider smsProvider) {
         this.smsProvider = smsProvider;
