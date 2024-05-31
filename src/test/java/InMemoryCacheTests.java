@@ -9,6 +9,7 @@ public class InMemoryCacheTests {
     {
         InMemoryCache inMemoryCache = new InMemoryCache();
         inMemoryCache.set("key", 123);
+
         int result = inMemoryCache.get("key", Integer.class);
 
         assertEquals(123, result);
@@ -19,6 +20,7 @@ public class InMemoryCacheTests {
     {
         InMemoryCache inMemoryCache = new InMemoryCache();
         inMemoryCache.set("key", "abc");
+
         String result = inMemoryCache.get("key", String.class);
 
         assertEquals("abc", result);
@@ -31,6 +33,7 @@ public class InMemoryCacheTests {
         MyData obj = new MyData();
         obj.Text1 = "cba";
         inMemoryCache.set("key", obj);
+
         MyData result = inMemoryCache.get("key", MyData.class);
 
         assertEquals("cba", result.Text1);

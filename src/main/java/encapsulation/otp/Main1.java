@@ -10,6 +10,7 @@ public class Main1 {
   private static int tryTimes;
 
   public static void main(String[] args) {
+    // simulate OTP sending flow
     if (sendTimes < MAX_SEND_TIMES) {
       sendTimes++;
       int otp = new Random().nextInt(900000) + 100000;
@@ -19,6 +20,7 @@ public class Main1 {
       System.out.println("OTP sending failed. Maximum send times reached.");
     }
 
+    // simulate OTP verification flow
     String otp = "123456"; // assume this is the OTP entered by the user
     if (tryTimes >= MAX_TRY_TIMES) {
       System.out.println("OTP verification failed. Maximum try times reached.");

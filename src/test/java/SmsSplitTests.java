@@ -10,7 +10,7 @@ public class SmsSplitTests {
     @Test
     public void no_need_split(){
         ISmsProvider mock = Mockito.mock(ISmsProvider.class);
-        ISmsProvider smsSplit = new SmsSplit(mock);
+        SmsSplit smsSplit = new SmsSplit(mock);
 
         smsSplit.SendSms("+1234567890", "short message");
 
@@ -20,7 +20,7 @@ public class SmsSplitTests {
     @Test
     public void need_split() {
         ISmsProvider mock = Mockito.mock(ISmsProvider.class);
-        ISmsProvider smsSplit = new SmsSplit(mock);
+        SmsSplit smsSplit = new SmsSplit(mock);
         when(mock.SendSms(any(), any())).thenReturn(true);
 
         smsSplit.SendSms("+1234567890", StringWithLength(SmsSplit.maxLength * 2));

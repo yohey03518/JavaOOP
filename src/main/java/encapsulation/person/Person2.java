@@ -5,15 +5,15 @@ public class Person2 {
     private int age;
 
     public Person2(String name, int age) {
-        setName(name);
-        setAge(age);
+        SetName(name);
+        SetAge(age);
     }
 
-    public String getName() {
+    public String GetName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void SetName(String name) {
         if (name != null && !name.isEmpty()) {
             this.name = name;
         } else {
@@ -21,11 +21,11 @@ public class Person2 {
         }
     }
 
-    public int getAge() {
+    public int GetAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void SetAge(int age) {
         if (age >= 0 && age <= 130) {
             this.age = age;
         } else {
@@ -33,7 +33,7 @@ public class Person2 {
         }
     }
 
-    public String getAgeCategory() {
+    public String GetAgeCategory() {
         if (age < 13) {
             return "Child";
         } else if (age < 20) {
@@ -45,7 +45,7 @@ public class Person2 {
         }
     }
 
-    public void printDescription() {
-        System.out.println("Name: " + name + ", Age: " + age + " (" + getAgeCategory() + ")");
+    public void PrintDescription() {
+        System.out.println("Name: " + name + ", Age: " + age + " (" + GetAgeCategory() + ")");
     }
 }

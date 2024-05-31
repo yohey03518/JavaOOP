@@ -29,8 +29,8 @@ public class TwilioSmsProvider {
             messages = new String[]{body};
         }
         for (String message : messages) {
-            // 3. System needs to record total success and fail count
-            // 4. If sending fail, system needs to retry 3 times
+            // 3. If sending fail, system needs to retry 3 times
+            // 4. System needs to record total success and fail count
             boolean isSuccess = false;
             for (int i = 0; i < 3; i++) {
                 // Use random to simulate send sms sometimes success and sometimes fail

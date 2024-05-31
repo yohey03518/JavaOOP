@@ -16,6 +16,7 @@ public class Main {
     }
 
     public static Animal[] GetMyPets() {
+
         return new Animal[] { new Dog(), new Cat() };
     }
 }

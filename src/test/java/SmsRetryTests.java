@@ -23,7 +23,7 @@ public class SmsRetryTests {
     @Test
     public void send_always_fail() {
         ISmsProvider mock = Mockito.mock(ISmsProvider.class);
-        ISmsProvider smsRetry = new SmsRetry(mock);
+        SmsRetry smsRetry = new SmsRetry(mock);
         when(mock.SendSms(any(), any())).thenReturn(false);
 
         boolean isSuccess = smsRetry.SendSms("+1234567890", "message");
@@ -35,7 +35,7 @@ public class SmsRetryTests {
     @Test
     public void send_fail_then_retry_success() {
         ISmsProvider mock = Mockito.mock(ISmsProvider.class);
-        ISmsProvider smsRetry = new SmsRetry(mock);
+        SmsRetry smsRetry = new SmsRetry(mock);
         when(mock.SendSms(any(), any())).thenReturn(false).thenReturn(true);
 
         boolean isSuccess = smsRetry.SendSms("+1234567890", "message");

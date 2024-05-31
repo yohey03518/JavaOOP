@@ -49,7 +49,7 @@ public class Calculator {
 
     public double GetResult() {
         double result = 0;
-        if (list.size() > 0) {
+        if (!list.isEmpty()) {
             for (int i = 0; i <= list.size() - 1; i++) {
                 if (action.get(i) == ActionType.ADD) {
                     result += list.get(i);
